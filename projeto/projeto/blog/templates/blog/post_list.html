@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+	{% for post in posts %}
+		<h3>{{post.title}}</h2>
+		<div class="date">
+			<p>{{post.publish_date}}</p>
+		</div>
+		<div class="post">
+			<p>{{post.text|truncatewords:30}}</p>
+			<a href="{{post.get_absolute_url}}"><button class="button btn btn-primary">Leia mais</button></a>
+		</div>
+	{% endfor %}
+{% endblock %}
